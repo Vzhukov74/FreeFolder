@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct FreeFolderApp: App {
+    
+    init() {
+        DI.setup()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FolderContentView(
+                vm: FolderContentViewModel(
+                    url: nil
+                )
+            )
         }
     }
 }
